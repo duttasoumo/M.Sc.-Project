@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Smart GreenHouse</title>
+
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+		<script src="{{ url_for('static', filename='javascript/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='javascript/jquery.csv.js') }}"></script>
+		<script src="{{ url_for('static', filename='javascript/bootstrap.min.js') }}"></script>
+		<script>
+		
+			$(document).ready(function(){
+				var interval = 1200;  // 1000 = 1 second, 3000 = 3 seconds
+				function doAjax() {
+					$.ajax({
+						type: 'POST',
+						url: '/process',
+						success: function (data) {
+								if(data!="-1"){
+									values=$.csv.toArray(data);
+									$('#temperature').val(values[0]);
+									$('#humidity').val(values[1]);
+									$('#ldr').val(values[2]);
+									$('#mq2').val(values[3]);
+									$('#soilm').val(values[4]);
+
+									}
+						},
+						complete: function (data) {
+								// Schedule the next
+								setTimeout(doAjax, interval);
+						}
+					});
+				}
+				setTimeout(doAjax, interval);
+			});
+		</script>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/regpagestyle.css') }}" />
+	</head>
+	<body>
+	<div class="container form-padding-custom">
+
+		<div class="panel panel-danger">
+          <div class="panel-heading">Sensor Values</div>
+          <div class="panel-body">
+		  
+            <div class="row form-padding-custom">
+				<div class="col-sm-3 col-sm-offset-1">
+                <label for="temperature" class="control-label">Temperature:</label>
+				</div>
+				<div class="col-sm-3 col-sm-offset-1">
+                <input id="temperature" name="temperature" type="text" class="form-control" readonly>
+              </div>
+            </div>
+			
+			<div class="row form-padding-custom">
+				<div class="col-sm-3 col-sm-offset-1">
+                <label for="humidity" class="control-label">Humidity:</label>
+				</div>
+				<div class="col-sm-3 col-sm-offset-1">
+                <input id="humidity" name="humidity" type="text" class="form-control" readonly>
+              </div>
+            </div>
+			
+			<div class="row form-padding-custom">
+				<div class="col-sm-3 col-sm-offset-1">
+                <label for="ldr" class="control-label">Light Intensity:</label>
+				</div>
+				<div class="col-sm-3 col-sm-offset-1">
+                <input id="ldr" name="ldr" type="text" class="form-control" readonly>
+              </div>
+            </div>
+			
+			<div class="row form-padding-custom">
+				<div class="col-sm-3 col-sm-offset-1">
+                <label for="mq2" class="control-label">Gas Sensor:</label>
+				</div>
+				<div class="col-sm-3 col-sm-offset-1">
+                <input id="mq2" name="mq2" type="text" class="form-control" readonly>
+              </div>
+            </div>
+			
+			<div class="row form-padding-custom">
+				<div class="col-sm-3 col-sm-offset-1">
+                <label for="soilm" class="control-label">Soil Moisture:</label>
+				</div>
+				<div class="col-sm-3 col-sm-offset-1">
+                <input id="soilm" name="soilm" type="text" class="form-control" readonly>
+              </div>
+            </div>
+			<div class="row">
+						<div class="col-sm-2 col-sm-offset-5">
+							<form action="/nextpage">
+								<input type="submit" class="btn btn-primary" value="Next Page">
+							</form>
+						</div>
+			</div>
+         </div>
+        </div>
+		</body>

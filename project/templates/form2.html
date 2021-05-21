@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart GreenHouse</title>
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/range-slider.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/toggle-switch.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static', filename='javascript/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='javascript/jquery.csv.js') }}"></script>
+    <script src="{{ url_for('static', filename='javascript/bootstrap.min.js') }}"></script>
+    <script>
+		
+			$(document).ready(function(){
+					$.ajax({
+						type: 'POST',
+						url: '/process2',
+						success: function (data) {
+						            //alert("form2 : "+data);
+									values=$.csv.toArray(data);
+									$('#temperature').val(parseInt(values[0]));
+									//$('#humidity').val(parseInt(values[1]));
+									$('#ldr').val(parseInt(values[2]));
+									$('#mq2').val(parseInt(values[3]));
+									$('#soilm').val(parseInt(values[4]));
+									$('#manual').prop('checked',stringToBoolean(values[5]));
+									$('#exhaust').prop('checked',stringToBoolean(values[6]));
+									$('#waterp').prop('checked',stringToBoolean(values[7]));
+									//$('#humidifier').prop('checked',stringToBoolean(values[8]));
+									$('#light').prop('checked',stringToBoolean(values[9]));
+									$('#peltier').prop('checked',stringToBoolean(values[10]));
+
+						    }
+					});
+				$("#but").click(function() {
+                    //alert('manual');
+					$.ajax({
+						type: 'POST',
+						url: '/update_parameters',
+						data: {value: ""+$("#temperature").val()+",25,"+$("#ldr").val()+","+$("#mq2").val()+","+$("#soilm").val()},
+						success: function (data) {
+						if(data == "1")
+						        alert('Updated');
+						}
+						});
+					});
+
+                $("#manual").change(function() {
+                    //alert('manual');
+					$.ajax({
+						type: 'POST',
+						url: '/manual',
+						data: {state:$(this).prop('checked')},
+						success: function (data) {
+						    if(data == "1")
+						        alert('Manual Automation Activation : ');
+						}
+						});
+					});
+				 $("#exhaust").change(function() {
+					$.ajax({
+						type: 'POST',
+						url: '/exhaust',
+						data: { state : $(this).prop('checked')},
+						success: function (data) {
+						    if(data == "1")
+						        alert('Exhaust Fan ');
+						}
+						});
+					});
+				 $("#waterp").change(function() {
+					$.ajax({
+						type: 'POST',
+						url: '/waterp',
+						data: { state : $(this).prop('checked')},
+						success: function (data) {
+						    if(data == "1")
+						        alert('Water Pump ');
+						}
+						});
+					});
+
+				$("#light").change(function() {
+					$.ajax({
+						type: 'POST',
+						url: '/light',
+						data: { state : $(this).prop('checked')},
+						success: function (data) {
+						    if(data == "1")
+						        alert('Light ');
+						}
+						});
+					});
+				$("#peltier").change(function() {
+					$.ajax({
+						type: 'POST',
+						url: '/peltier',
+						data: { state : $(this).prop('checked')},
+						success: function (data) {
+						    if(data == "1")
+						        alert('Peltier ');
+						}
+					});
+				});
+			});
+
+            function stringToBoolean(str){
+                switch(str.toLowerCase().trim()){
+                    case "true": case "yes": case "1": return true;
+                    case "false": case "no": case "0": case null: return false;
+                    default: return Boolean(str);
+                }
+            }
+
+
+
+    </script>
+    <link href="{{ url_for('static', filename='css/regpagestyle.css') }}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container form-padding-custom">
+
+        <div class="panel panel-danger">
+            <div class="panel-heading">Optimal Values</div>
+            <div class="panel-body">
+
+                <div class="row form-padding-custom">
+                    <div class="col-sm-3 col-sm-offset-1">
+                        <label class="control-label" for="temperature">Temperature:</label>
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-1">
+                        <div class="slidecontainer">
+                            <input class="slider" id="temperature" max="50" min="20" name="temperature" type="range">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row form-padding-custom">
+                    <div class="col-sm-3 col-sm-offset-1">
+                        <label class="control-label" for="ldr">Light Intensity:</label>
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-1">
+                        <div class="slidecontainer">
+                            <input class="slider" id="ldr" max="100" min="1" name="ldr" type="range">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row form-padding-custom">
+                    <div class="col-sm-3 col-sm-offset-1">
+                        <label class="control-label" for="mq2">MQ2:</label>
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-1">
+                        <div class="slidecontainer">
+                            <input class="slider" id="mq2" max="100" min="1" name="mq2" type="range">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row form-padding-custom">
+                    <div class="col-sm-3 col-sm-offset-1">
+                        <label class="control-label" for="soilm">Soil Moisture:</label>
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-1">
+                        <div class="slidecontainer">
+                            <input class="slider" id="soilm" max="100" min="1" name="soilm" type="range">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row form-padding-custom">
+                    <div class="col-sm-3 col-sm-offset-1">
+                        <button class="btn btn-primary" align="center" id="but">Update</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<div class="container form-padding-custom">
+
+    <div class="panel panel-danger">
+        <div class="panel-heading">Actuators</div>
+        <div class="panel-body">
+
+            <div class="row form-padding-custom">
+                <div class="col-sm-3 col-sm-offset-1">
+                    <label class="control-label">Manual Control:</label>
+                </div>
+                 <!--all changes made here>-->
+                <div class="col-sm-3 col-sm-offset-1" >
+
+
+                <label class="switch" align="center"><input type="checkbox" id="manual" name="manual" align="center">
+                        <div class="slider round"><!--ADDED HTML --><span class="on">ON</span><span
+                                class="off">OFF</span><!--END--></div></label></div>
+
+                <!--all changes made here>-->
+            </div>
+
+
+            <div class="row form-padding-custom">
+                <div class="col-sm-3 col-sm-offset-1">
+                    <label class="control-label">Exhaust Fan:</label>
+                </div>
+                 <!--all changes made here>-->
+                <div class="col-sm-3 col-sm-offset-1" >
+
+
+                <label class="switch" align="center"><input type="checkbox" id="exhaust" name="exhaust" align="center">
+                        <div class="slider round"><!--ADDED HTML --><span class="on">ON</span><span
+                                class="off">OFF</span><!--END--></div></label></div>
+
+                <!--all changes made here>-->
+            </div>
+
+            <div class="row form-padding-custom">
+                <div class="col-sm-3 col-sm-offset-1">
+                    <label class="control-label" for="waterp">Water Pump:</label>
+                </div>
+                <div class="col-sm-3 col-sm-offset-1">
+                    <label class="switch"><input type="checkbox" id="waterp" name="waterp">
+                        <div class="slider round"><!--ADDED HTML --><span class="on">ON</span><span
+                                class="off">OFF</span><!--END--></div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="row form-padding-custom">
+                <div class="col-sm-3 col-sm-offset-1">
+                    <label class="control-label" for="ldr">Light:</label>
+                </div>
+                <div class="col-sm-3 col-sm-offset-1">
+                    <label class="switch"><input type="checkbox" id="light" name="light">
+                        <div class="slider round"><!--ADDED HTML --><span class="on">ON</span><span
+                                class="off">OFF</span><!--END--></div>
+                    </label>
+                </div>
+            </div>
+            <div class="row form-padding-custom">
+                <div class="col-sm-3 col-sm-offset-1">
+                    <label class="control-label" for="peltier">Peltier:</label>
+                </div>
+                <div class="col-sm-3 col-sm-offset-1">
+                    <label class="switch"><input type="checkbox" id="peltier" name="peltier">
+                        <div class="slider round"><!--ADDED HTML --><span class="on">ON</span><span
+                                class="off">OFF</span><!--END--></div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>

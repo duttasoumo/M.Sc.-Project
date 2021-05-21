@@ -1,0 +1,23 @@
+#define ledPin 13
+int c=0;
+void setup()
+{
+  pinMode(ledPin, OUTPUT);
+}
+
+void loop()
+{
+  if(c<5)
+  {
+	digitalWrite(ledPin, HIGH);
+  	delay(500); // Wait for 1000 millisecond(s)
+  	digitalWrite(ledPin, LOW);
+  	delay(500); // Wait for 1000 millisecond(s)
+  }else{
+    digitalWrite(ledPin, HIGH);
+  	delay(2000); // Wait for 1000 millisecond(s)
+  	digitalWrite(ledPin, LOW);
+  	delay(2000); // Wait for 1000 millisecond(s)
+  }
+  c=++c%10;
+}

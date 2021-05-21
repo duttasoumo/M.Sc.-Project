@@ -1,0 +1,7 @@
+greenhouse monitor and control temperature, relative humidity and carbon-di-oxide
+condition of bridges across the city ambient temperature, humidity and accelerometer data
+Smart Trash Collector
+Air Pollution Meter
+Smart Agri Crop Monitoring
+
+IOT based agricultural 

@@ -1,0 +1,226 @@
+S.Muthunpandian et.al [1] has given an automated system has
+been designed and implemented on for crop field monitoring
+continuously. The system maintains the water levels in the
+crop field at power consumption in the crop field. Developed
+system is useful in the irrigation system.
+Joaquin Gutierrez et.al [2] showed automated irrigation
+system that reduces the water resources more effective by
+considering the timing of water scarcity. They shown water
+utilization is minimized and incorporated a solar power system
+to reduce power consumption. This was developed by smart
+phone operating by considering the sensors data via internet.
+Mohan raj et.al [3] focuses on monitoring the data in farming
+cycle. The system contains ATMEL microcontroller based
+GSM operated sensors are used to monitors wind mill
+temperature variation PH level of water. After that an Arduino
+based IOT system are used however when we consider the to
+monitor the huge number of Raspberry pi system is more
+suitable. Michael G.Williams [4] showed an irrigation system
+with raspberry pi system. Raspberry pi based systems for
+home automation, entertainment systems, security.
+Developing Raspberry systems are more interesting for
+thrusting environments [10].
+
+1. S,muthunpandian, S.Vigneshwaran , R.C Ranjitsabarinath ,
+Y.Manoj kumar reddy “IOT Based Crop-Field Monitoring And
+Irrigation Automation” Vol. 4, Special Issue 19, April 2017
+2. Joaquín Gutiérrez, Juan Francisco Villa-Medina, Alejandra Nieto-
+Garibay, and Miguel Ángel Porta-Gándara” Automated Irrigation
+System Using a Wireless Sensor Network and GPRS Module”
+IEEE Transactions On Instrumentation And Measurement,Vol 17,
+2017
+3. Mohanraj I Kirthika Ashokumarb, Naren J ” Field Monitoring and
+Automation using IOT in Agriculture Domain” IJCSNS, VOL.15
+No.6, June 2015
+4. Michael G Williams “A Risk Assessment on Raspberry PI using
+NIST Standards “Version 1.0 December 2012.
+10. Joaquín Gutiérrez, Juan Francisco Villa-Medina, Alejandra Nieto-
+Garibay, and Miguel Ángel Porta-Gándara, “Automated Irrigation
+System Using a Wireless Sensor Network and GPRS Module”,
+IEEE Transactions on Instrumentation and Measurements, 0018-
+9456,2013
+
+
+H. Chang et al [3] developed a new agriculture monitoring
+system based on WSNs. Y. Jiber et al [4] proposed a
+precision agriculture monitoring approach that provides
+meaningful services to farmers. It reports the advantage of the
+precision agriculture approach to help making valued
+decisions which could not only increase the land productivity
+but also optimize the use of various resources. F. G. Costa et
+al [5] describes an architecture based on unmanned aerial
+vehicles (UAVs) which can be employed to implement a
+control loop for agricultural applications where UAVs are
+responsible for spraying important chemicals on crops. The
+process of applying the chemicals is controlled by means of
+the feedback obtained from the wireless sensor network
+deployed on the crop field. The obtained results show that the
+adjustment of the route based on the feedback information
+from the sensors could minimize the wastage of pesticides.
+Stipanicev et al [6] describes a networked embedded
+greenhouse monitoring and control based on simple
+embedded web servers and connecting sensors and actuators
+using 1-wire protocol. M. Martinelli et al [7] proposed a
+WSN-based solution for precision farm purposes. Y. Kim et
+al [8] designed a remote sensing and control of an irrigation
+system using a distributed WSN. In the proposed system
+communication signals from the sensor network and
+irrigation controller to the base station were successfully
+interfaced using low-cost bluetooth wireless radio receiver.
+Graphical user interface-based software has been developed
+to offer stable remote access to field conditions and real-time
+control and monitoring of the variable-rate irrigation
+controller. A. Hanggoro et al [9] proposed and designed a
+greenhouse monitoring and controlling is a complete system
+designed to monitor and control the humidity inside a green
+house. It uses an android mobile phone, connected using Wi-
+Fi to a central server which connects via serial
+communication to a microcontroller and humidity sensor. S.
+Jin et al [10] developed a remote measurement and control
+system of large-scale greenhouse based on GSM-SMS. S. O.
+Al Mehairi et al [11] discusses the design and
+implementation of a prototype system which integrates
+various existing technologies for home monitoring and
+control that fits with the future smart home concept. In this
+work the various devices in the home are connected
+wirelessly using Bluetooth standard to a home server and can
+be monitored and controlled via the mobile phone using a
+portable MIDlet application. J. Gutiérrez et al [12] developed
+an automated irrigation system using a WSN and GPRS
+module in which an algorithm was developed with different
+threshold values to control various parameters. Compared to
+the existing related research works, in this paper, we propose
+a mobile wireless robot which collects the data from different
+types of sensors and then send it to main server using
+wireless protocol. The collected data from various sensors
+onboard the mobile robot provides the information about
+different environmental factors around the plants which in
+turns helps to monitor the entire agricultural field. Monitoring
+itself is not enough and complete solution to improve the
+yield of the crops is important. Also there are number of
+other factors that affect the productivity of crops to a great
+extent. These factors include attack of insects and pests which
+can be controlled by spraying the crop with proper insecticide
+and pesticides. Secondly, attack of wild animals and birds
+when the crops are in growing stage. This can be avoided by
+periodically generating a loud creak to scare the birds and
+mammals from the robot, whenever it senses any unknown
+object near the fields. There is also possibility of thefts when
+crop is at the stage of harvesting. So, in order to provide
+solutions to all such problems, it is essential to develop a
+wireless integrated system such as novel mobile robot using
+Raspberry Pi 2 Model B incorporating various sensors.
+
+[3] H. Chang, N. Zhou, X. Zhao, Q. Cao, M. Tan and Y. Zhang, "A new
+agriculture monitoring system based on WSNs," 2014 12th International
+Conference on Signal Processing (ICSP), Hangzhou, 2014, pp. 1755-1760.
+[4] Y. Jiber, H. Harroud and A. Karmouch, "Precision agriculture monitoring
+framework based on WSN," 2011 7th International Wireless
+Communications and Mobile Computing Conference, Istanbul, 2011, pp.
+2015-2020.
+[5] F. G. Costa, J. Ueyama, T. Braun, G. Pessin, F. S. Osório and P. A.
+Vargas, "The use of unmanned aerial vehicles and wireless sensor network in
+agricultural applications," 2012 IEEE International Geoscience and Remote
+Sensing Symposium, Munich, 2012, pp. 5045-5048.
+[6] Stipanicev, D.; Marasovic, J., "Networked embedded greenhouse
+monitoring and control," in Control Applications, 2003. CCA 2003.
+Proceedings of 2003 IEEE Conference on, vol.2, no., pp.(1350-1355) vol.2,
+(23-25) June 2003.
+[7] M. Martinelli, L. Ioriatti, F. Viani, M. Benedetti and A. Massa, "A WSNbased
+solution for precision farm purposes," 2009 IEEE International
+Geoscience and Remote Sensing Symposium, Cape Town, 2009, pp. V-469-
+V-472.
+[8] Y. Kim, R. G. Evans and W. M. Iversen, "Remote Sensing and Control of
+an Irrigation System Using a Distributed Wireless Sensor Network," in IEEE
+Transactions on Instrumentation and Measurement, vol. 57, no. 7, pp. 1379-
+1387, July 2008.
+[9] A. Hanggoro, M. A. Putra, R. Reynaldo and R. F. Sari, "Green house
+monitoring and controlling using Android mobile application," 2013
+International Conference on QiR, Yogyakarta, 2013, pp. 79-85.
+[10] S. Jin, S. Jingling, H. Qiuyan, W. Shengde and Y. Yan, "A Remote
+Measurement and Control System for Greenhouse Based on GSM-SMS,"
+2007 8th International Conference on Electronic Measurement and
+Instruments, Xi'an, 2007, pp. 2-82-2-85.
+[11] S. O. Al Mehairi, H. Barada and M. Al Qutayri, "Integration of
+Technologies for Smart Home Application," 2007 IEEE/ACS International
+Conference on Computer Systems and Applications, Amman, 2007, pp. 241-
+246.
+[12] J. Gutiérrez, J. F. Villa-Medina, A. Nieto-Garibay and M. Á. Porta-
+Gándara, "Automated Irrigation System Using a Wireless Sensor Network
+and GPRS Module," in IEEE Transactions on Instrumentation and
+Measurement, vol. 63, no. 1, pp. 166-176, Jan. 2014.
+
+
+
+The research in agriculture area is enhanced in various aspects to
+improve the quality and quantity of productivity of agriculture.
+Researchers have been worked on many different projects on soil
+attributes, different weather conditions as well as scouting crops.
+Some projects worked on actual farm fields and some worked on
+polyhouses. Researches of Carrnige Mellon University worked on
+plant nursery using Wireless Sensor Technology [2]. Wireless Sensor
+Network based polyhouse monitoring system is explained in [3]
+which make use of environment temperature, humidity, CO2 level
+and sufficient light detection modules. This polyhouse control
+technology provides automatic adjustment of polyhouse. . In [4]
+authors have proposed development of wsn based above mentioned
+parameters for agriculture using ZigBee protocol and GPS
+technology. In some projects such as [5] authors have designed and
+implemented an approach in development of crops monitoring system
+in real time to increase production of rice plants. This system has
+used motes with sensors to check leaf wetness. Later on use of IoT
+has been proposed in [6-8]. IoT gives platform to researches to
+maintain real time data and send alerts immediately to farmers. IoT
+implementation gives easy access to information that comes from
+sensor nodes. IoT is also used for product supply chain business
+process. Cloud architecture gives additional support to IoT in
+maintaining Big data of agriculture information viz. history
+information, soil properties, fertilizers distribution, image cultivation
+through camera and information collected through sensors, recording
+information etc. Authors have analyzed collected data for finding
+correlation between environment, work and yield for standard work
+model construction. Monitoring for adverse signs and fault detection.
+In [9] authors have discussed the application of data mining with the
+help of WEKA tool and analysis model using of machine learning
+algorithms. In [10] authors have concentrated on crop monitoring.
+Information of temperature and rainfall is collected as initial spatial
+data and analyzed to reduce the crop losses and to improve the crop
+production. They have used optimization method to show progressive
+refinement for spatial association analysis. Although authors
+mentioned above have proposed many models in agriculture domain,
+the effective model is needed that uses new technologies and
+provides an integrated approach to monitor environmental conditions
+periodically and various soil properties of farm field through IoT
+devices and store these details at the central place in the cloud storage
+which results in Big –data over the time. It is also usable by multiple
+vendors or farmers who enquire about crop yield maximization.
+Farmer can analyze these data for fertilizer requirements for current
+crop. It will help for smart climate solutions and disaster prevention.
+
+[2] Junaid ahmed zubairi , ” Application of modern high performance
+networks” Bentham science publishers Ltd. 2009, pg. 120-129.
+[3] Yongxian Song, Juanli Ma, Xianjin Zhang, Yuan Feng, “Design of
+Wireless Sensor Network-Based Greenhouse Environment monitoring
+and Automatic Control System”, JOURNAL OF NETWORKS, VOL. 7,
+NO. 5, MAY 2012.
+[4] G.V.Satyanarayana, SD.Mazaruddin, “Wireless Sensor Based Remote
+Monitoring System for Agriculture using ZigBee and GPS”, Conference
+on Advances in Communication and Control Systems 2013.
+[5] N.Sakthipriya, “An Effective Method for Crop Monitoring Using Wireless
+Sensor Network”, MiddleEast Journal of Scientific Research 20(9):1127-
+1132, 2014 ISSN 1990-9233.
+[6] Alexandros Kaloxylos “Farm management systems and the Future Internet
+era”, Computer and Electronics in Agriculture 89(2012)130144.
+[7] Xiaohui Wang, Nannan Liu, “The Application of Internet of Things in
+Agricultural means of production supply chain management”, Research
+Article, Journal of Chemical and Pharmaceutical Research,
+2014,6(7):2304-2310.
+[8] Li Minbo, Zhu Zhu, Chen Guangyu, “Information Service System of
+Agriculture IoT”, AUTOMATICA 54(2013) 4, 415-426.
+[9] Sally Jo Cunningham, Geoffrey Holmes, “Developing innovative
+applications in agriculture using data mining”, SEARCC’99 conference
+proceedings.
+[10] D.Rajesh, “Application of Spatial Data Mining for Agriculture”,
+International Journal of Computer Applications (0975-8887) Volume 15-
+No.2, February 2011.
+545

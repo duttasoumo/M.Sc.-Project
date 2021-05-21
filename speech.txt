@@ -1,0 +1,93 @@
+today my topic for presentation is Google news personalisation
+
+
+The Internet is vast and The challenge is in finding the right content for yourself, 
+search engine can help us to solve this problem if we are looking for somthing specific. However 
+many a times a user may not know what to look for, for cases like movies,songs or even news etc. 
+in such cases we would present a recommendation to a user based on her interest.
+
+
+in this age of information people are drowned in data pool, them without getting the right information
+this is where the role of colaborative filtering comes, as explained by my friend kunal
+
+
+Collaborative filtering is a technology that aims to learn
+user preferences and make recommendations based on user
+and community data.
+
+
+so why use collaborative filtering for google news ?
+the answer lies in the fact that google is visited by millions of user per day 
+and a lot of articles is being created daily. Scalability is a mojor issue
+due to which existing recomender system are unsuitable.
+
+
+The system is comprises of search queries and clicks on news stories.
+recomendation is based on click history of user and clicks of the user community
+
+
+moveing on to the related works algorithms are of two types memory-based 
+and model-based.
+
+in memory-based prediction is made based on the past rating of the user and the 
+weighted average given by other users, where the weight is the similarity between 
+the users.
+
+in model-based , a model is developed based on users past rating and this model
+is used to predict the the ranking of the new articles.
+
+the system used by googles uses a combination of three algos
+PLSL
+MH
+ICV
+and the ranking is coputed based on a weight average of all three algo
+
+the MinHash Algo
+is a probabilistic soft clustering algo that asigns a pair of user same cluster 
+with a probability, which is proportional to the overlap between the set of items
+that these users have in common
+
+the PLSI
+was developed by Hofmann for performing collaborative filtering. It models
+users (u ? U) and items (s ? S) as random variables, taking values from 
+the space of all possible users and items respectively. the relationship 
+between users and items is learned by modeling the joint distribution of users and
+items as a mixture distribution. Z is a parameter introduce to capture the correct relationship.
+Expectation Maximization (EM) is used to learn the maximum
+likelihood parameters of this model. probabilities p(z/u) and p(s/z) are learned from the training data using EM.
+
+the co-visitation
+covisitation is defined as an event in which two stories are clicked by the
+same user within a certain time interval.Imagine a graph whose nodes represent items
+(news stories) and weighted edges represent the time discounted
+number of covisitation instances. The edges could
+be directional to capture the fact that one story was clicked
+after the other, or not if we do not care about the order.
+
+The user table UT and story table ST are conceptually
+two dimensional tables that are used for storing various
+kinds of statistics on a per user and per story basis.
+ The
+rows of the user table are indexed by user-id, and for each
+user-id, two kinds of information are stored in the table:
+(a) Cluster information: A list of MinHash and PLSI
+cluster-ids that the user belongs to, and
+(b) Click history: The list of news story-id’s that the user
+has clicked on.
+
+The rows of the story table are indexed by story-id, and
+for each row corresponding to a story S, there are two main
+types of statistics that are maintained in different columns:
+(a) Cluster statistics: How many times was
+story S clicked on by users from each cluster C. 
+(b) Covisitation statistics: How many times was story
+S co-visited with each story S'.
+
+
+similar to most ML algo the traning and test set was randomly divided 
+in 80-20 ratio,
+the precision and recall id recorded
+
+the precision : what fraction of the recommendations were actually clicked in the hold-out or test set
+the recall : what fraction of the clicks in the hold-out set were actually recommended
+
